@@ -1,5 +1,4 @@
 # san-router-spa
-===
 
 > 这是一个基于san-router构建单页应用的示例
 
