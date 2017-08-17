@@ -1,0 +1,92 @@
+<template>
+    <div class="about">
+
+        <h3 class="about-title">关于关于</h3>
+        <san-row gutter="{{16}}">
+            <san-col span="8">
+                <san-paper class="paper-card" zDepth="3">
+                    <div class="item">
+                        <div class="logo">
+                            <img src="{{efe}}">
+                            XXX
+                        </div>
+                        <div class="desc">
+                            <p>哈哈啊哈哈</p>
+                        </div>
+                    </div>
+                </san-paper>
+            </san-col>
+            <san-col span="8">
+                <san-paper class="paper-card" zDepth="3">
+                    <div class="item">
+                        <div class="logo">
+                            <img src="{{efe}}">
+                            YYY
+                        </div>
+                        <div class="desc">
+                            <p>哈哈哈哈哈的</p>
+                        </div>
+                    </div>
+                </san-paper>
+            </san-col>
+        </san-row>
+    </div>
+</template>
+
+<script>
+    import {Row,Col} from 'san-mui/lib/Grid';
+    import Paper from 'san-mui/lib/Paper';
+    import efe from './efe-favicon.png';
+    export default {
+        components: {
+            'san-row': Row,
+            'san-col': Col,
+            'san-paper': Paper
+        },
+        initData() {
+            return {
+                name: 'sqliang',
+                efe: efe
+            };
+        },
+        route() {
+            const route = this.data.get('route');
+            //console.log(route.query.id);
+        }
+    }
+</script>
+
+<style>
+    .about {
+        margin-bottom: 20px;
+    }
+    .about-title {
+        margin-bottom: 10px;
+    }
+    .paper-card {
+        margin-bottom: 20px;
+        height: 100px;
+        width: 100%;
+    }
+    .paper-card .item {
+        padding: 8px;
+    }
+    .paper-card .item .logo {
+        height: 40px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #3273dc;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .paper-card .item .logo img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+    .paper-card .item .desc {
+        margin-top: 20px;
+    }
+</style>
