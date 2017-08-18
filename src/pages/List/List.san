@@ -12,9 +12,9 @@
                </ui-button>
            </router-link>
             <router-link class="add" to="/add">
-                <icon-button variants="raised info">
-                    add
-                </icon-button>
+                <ui-button variants="raised info">
+                    新建
+                </ui-button>
             </router-link>
         </div>
         <san-paper zDepth="3">
@@ -34,9 +34,9 @@
                         <san-td>{{item.desc}}</san-td>
                         <san-td>
                             <router-link to="/edit/{{item.id}}">
-                                <icon-button variants="info">
-                                    mode_edit
-                                </icon-button>
+                                <ui-button variants="info">
+                                    编辑
+                                </ui-button>
                             </router-link>
                         </san-td>
                     </san-tr>
@@ -76,6 +76,7 @@
         route() {
             // 获取 route 参数
             let tagId = this.data.get('route').query['tag_id'];
+            this.data.set('tagId', tagId);
             if (tagId !== undefined && tagId !== 0) {
                 tagId = Number(tagId);
                 const filters = list.filter(item => {

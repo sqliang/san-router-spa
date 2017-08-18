@@ -41,7 +41,7 @@
     } from 'san-mui/lib/Card';
     import {Button} from 'san-mui/lib/Button';
     import Avatar from 'san-mui/lib/Avatar';
-    import avatar from './86.jpg';
+    import avatar from './efe-favicon.png';
     export default {
         components: {
             'san-card': Card,
