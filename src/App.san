@@ -32,6 +32,7 @@
     import AppBar from 'san-mui/lib/AppBar';
     import AppMenu from './components/AppMenu.san';
     import {IconButton} from 'san-mui/lib/Button';
+    import {router} from 'san-router';
 
     const appTitle = 'XXX管理系统';
     const menus = [
@@ -63,29 +64,27 @@
                 appTitle: appTitle,
                 userName: 'sqliang',
                 menuVal: '/',
-                openMenu: false,
+                openMenu: false
             };
         },
         attached() {
-            //使路由生效
-            this.startRoute();
+            router.listen((e, config) => {
+                if (config.rule) {
+                    if (config.rule.indexOf('/list') !== -1) {
+                        this.data.set('menuVal', '/list');
+                    }
+                    else {
+                        this.data.set('menuVal', config.rule);
+                    }
+                }
+
+            });
         },
         handleMenuSelect(item) {
             const value = item.url;
             if (value) {
-                const router = this.data.get('router');
                 router.locator.redirect(value);
             }
-        },
-        startRoute() {
-            const router = this.data.get('router');
-            //路由监听
-            router.listen((e, config) => {
-                this.data.set('menuVal', config.rule);
-            });
-            // 路由模式 'html5 | hash'
-            router.setMode('html5');
-            router.start();
         }
     }
 </script>

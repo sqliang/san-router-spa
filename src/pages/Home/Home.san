@@ -1,5 +1,8 @@
 <template>
     <div class="home">
+        <div>
+            <san-button variants="info" on-click="testClick">test</san-button>
+        </div>
         <section>
             <san-card>
                 <san-card-header title="{{headerTitle}}" subTitle="{{haderSubTitle}}">
@@ -42,6 +45,7 @@
     import {Button} from 'san-mui/lib/Button';
     import Avatar from 'san-mui/lib/Avatar';
     import avatar from './efe-favicon.png';
+    import {router} from 'san-router';
     export default {
         components: {
             'san-card': Card,
@@ -59,6 +63,13 @@
                 haderSubTitle: 'sub sub sub',
                 avatarSrc: avatar
             }
+        },
+        route() {
+            console.log('/');
+        },
+        testClick() {
+            console.log('=====>>>');
+            router.locator.redirect('/');
         }
     }
 </script>

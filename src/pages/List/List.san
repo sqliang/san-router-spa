@@ -74,8 +74,11 @@
             }
         },
         route() {
+            // 向组件树的上层派发消息
+            let route = this.data.get('route');
+            //this.dispatch('menu-route', route);
             // 获取 route 参数
-            let tagId = this.data.get('route').query['tag_id'];
+            let tagId = route.query['tag_id'];
             this.data.set('tagId', tagId);
             if (tagId !== undefined && tagId !== 0) {
                 tagId = Number(tagId);

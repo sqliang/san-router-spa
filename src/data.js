@@ -52,3 +52,9 @@ export const tags = [
         title: 'IT'
     }
 ];
+
+export const links = [
+    {
+        
+    }
+];
